@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Расписание 10-А</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+h1 {
+    color: white;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 12px 25px;
+    margin: 8px;
+    border: none;
+    background: #ffffffcc;
+    color: #333;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+.schedule {
+    display: none;
+    margin-top: 20px;
+}
+
+.active {
+    display: block;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+th {
+    background: #4facfe;
+    color: white;
+}
+</style>
+
+<script>
+function playSound() {
+    let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-16.mp3");
+    audio.play();
+}
+
+function showDay(dayId) {
+    playSound();
+    let days = document.querySelectorAll(".schedule");
+    days.forEach(day => day.classList.remove("active"));
+    document.getElementById(dayId).classList.add("active");
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>📚 Расписание 10-А</h1>
+
+<div class="buttons">
+    <button onclick="showDay('mon')">Понедельник</button>
+    <button onclick="showDay('tue')">Вторник</button>
+    <button onclick="showDay('wed')">Среда</button>
+    <button onclick="showDay('thu')">Четверг</button>
+    <button onclick="showDay('fri')">Пятница</button>
+</div>
+
+<div id="mon" class="schedule active">
+<table>
+<tr><th>Урок</th><th>Предмет</th></tr>
+<tr><td>1</td><td>Час будущего</td></tr>
+<tr><td>2</td><td>Узбекский язык</td></tr>
+<tr><td>3</td><td>Алгебра</td></tr>
+<tr><td>4</td><td>Русская литература</td></tr>
+<tr><td>5</td><td>Химия</td></tr>
+</table>
+</div>
+
+<div id="tue" class="schedule">
+<table>
+<tr><th>Урок</th><th>Предмет</th></tr>
+<tr><td>1</td><td>Геометрия</td></tr>
+<tr><td>2</td><td>Английский язык</td></tr>
+<tr><td>3</td><td>Бизнес</td></tr>
+<tr><td>4</td><td>Английский язык</td></tr>
+<tr><td>5</td><td>Физика</td></tr>
+</table>
+</div>
+
+<div id="wed" class="schedule">
+<table>
+<tr><th>Урок</th><th>Предмет</th></tr>
+<tr><td>1</td><td>Узбекский язык</td></tr>
+<tr><td>2</td><td>Профиль</td></tr>
+<tr><td>3</td><td>Профиль</td></tr>
+<tr><td>4</td><td>Профиль</td></tr>
+<tr><td>5</td><td>Русский язык</td></tr>
+</table>
+</div>
+
+<div id="thu" class="schedule">
+<table>
+<tr><th>Урок</th><th>Предмет</th></tr>
+<tr><td>1</td><td>Информатика</td></tr>
+<tr><td>2</td><td>Английский язык</td></tr>
+<tr><td>3</td><td>Русская литература</td></tr>
+<tr><td>4</td><td>НВП</td></tr>
+<tr><td>5</td><td>Биология</td></tr>
+<tr><td>6</td><td>Физика</td></tr>
+</table>
+</div>
+
+<div id="fri" class="schedule">
+<table>
+<tr><th>Урок</th><th>Предмет</th></tr>
+<tr><td>1</td><td>НДП</td></tr>
+<tr><td>2</td><td>Физкультура</td></tr>
+<tr><td>3</td><td>Геометрия</td></tr>
+<tr><td>4</td><td>Алгебра</td></tr>
+<tr><td>5</td><td>Воспитание</td></tr>
+<tr><td>6</td><td>История</td></tr>
+</table>
+</div>
+
+</body>
+</html>
